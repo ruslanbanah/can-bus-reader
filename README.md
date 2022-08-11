@@ -1,6 +1,16 @@
 # can-bus-reader
 
-Install libs:
+WEB-PART:
+
+```bash
+cd /web-part
+npm install
+npm run start
+```
+
+open in the browser `./index.html`
+
+Arduino Install libs:
 
 1. Download ZIP file from https://github.com/autowp/arduino-mcp2515/archive/master.zip
 2. From the Arduino IDE: Sketch -> Include Library... -> Add .ZIP Library...
