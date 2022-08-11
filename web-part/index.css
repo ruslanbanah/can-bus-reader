@@ -1,21 +1,145 @@
-
 :root {
     --columns: 12;
+    --bs-body-bg-rgb: 255,255,255;
+    --bs-primary-rgb: 13,110,253;
+    --bd-accent-rgb: 255,228,132;
+    --bd-violet-rgb: 112.520718,44.062154,249.437846;
+    --bd-pink-rgb: 214,51,132;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {height: 100%;}
+body {
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",
+    Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+    background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%),
+    radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%),
+    radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%),
+    radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%),
+    radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
 }
 
+/* Grid main */
+
+.grid-main {
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    height: 100%;
+}
+.columns-codes {
+    overflow-y: auto;
+    height: 100%;
+}
+.column-save-log {
+    padding: 10px;
+}
+
+/* Record */
+.form-save-log {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto;
+    height: 100%;
+}
+
+.form-save-log__header {
+    display: grid;
+    grid-template-columns: 44px 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+}
+.form-save-log__record {
+    text-align: center;
+}
+.form-save-log__record input {
+    display: none;
+}
+.form-save-log__record input + label {
+    position: relative;
+    display: inline-block;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #dc3545;
+    cursor: pointer;
+}
+.form-save-log__record input + label:after {
+    content: '';
+    position: absolute;
+    background-color: #6c757d;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transition: all 0.5s ease;
+    transform: translate(-50%,-50%);
+}
+.form-save-log__record input:checked + label:after{
+    border-radius: 100%;
+    background-color: #dc3545;
+}
+.form-save-log__record input:checked + label{
+    color: red;
+}
+
+.form-save-log__body {
+    background-color: rgba(248, 249, 250, 0.47);
+    border: 1px solid rgb(var(--bd-violet-rgb));
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+.form-save-log__textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    line-height: 28px;
+}
+/* Button */
+.btn {
+    border: 1px solid #712cf9;
+    background-color: #712cf9;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover {
+    border: 1px solid #712cf9;
+    background-color: #fff;
+    color: #712cf9;
+}
+.btn-warning {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+.btn-warning:hover {
+    background-color: #fff;
+    color: #dc3545;
+}
 #app {
     padding: 50px;
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
-
-    width: 500px;
+    background-color: rgba(248, 249, 250, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    margin: 20px;
 }
-
-#log {
-    width: 400px;
-    height: 300px;
+#app > input {
+    margin: 5px 0
 }
-
+#app > div {
+    padding: 5px;
+}
 .item {
     background-color: white;
     animation-name: example;

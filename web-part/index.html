@@ -10,16 +10,25 @@
     <script type="text/javascript" src="./index.js"></script>
 </head>
 <body>
-    <div id="app"></div>
-    <div>
-        <div>
-            <span>Запис</span>
-            <input id="logcheckbox" type="checkbox">
-            <button onclick="saveLog()">Зберегти до файлу</button>
-            <button onclick="clearLog()">Очистити</button>
+    <div class="grid-main">
+        <div class="column-codes">
+            <div id="app"></div>
         </div>
-        
-        <textarea id="log"></textarea>
+        <div class="column-save-log">
+            <div class="form-save-log">
+                <div class="form-save-log__header">
+                    <div class="form-save-log__record">
+                        <input id="logcheckbox" type="checkbox">
+                        <label class="form-save-log__checkbox" for="logcheckbox" title="Запис"></label>
+                    </div>
+                    <button class="btn" onclick="saveLog()">Зберегти до файлу</button>
+                    <button class="btn btn-warning" onclick="clearLog()">Очистити</button>
+                </div>
+                <div class="form-save-log__body">
+                    <textarea class="form-save-log__textarea" id="log"></textarea>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

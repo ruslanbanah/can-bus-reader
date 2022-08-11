@@ -2,3 +2,6 @@
 /web/node_modules
 .history
 .DS_Store
+/web-part/package-lock.json
+/web-part/yarn.lock
+/package-lock.json
